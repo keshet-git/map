@@ -1,0 +1,29 @@
+# import requestsc
+# import logo from=
+# import ".App.css"
+#
+# let App_ID = 3c29f155
+# let App_KEY = 51273edd95cf3efae15a13d9c5a3efe3
+
+# sentenc = input("What kind of dish would you like to prepare?")
+# print(sentenc)
+# # Looking for the type of food that was put in
+#
+# # ask the user what ingredients he should avoid and put them in a class
+# avoid = input("what the ingredients you shold avoid? You can insert more than one")
+# print(avoid)
+# "https://api.edamam.com/search?q=chicken&app_id=${YOUR_APP_ID}&app_key=${YOUR_APP_KEY}&from=0&to=3&calories=591-722&health=alcohol-free"
+import requests
+
+ url = "https://api.edamam.com/search"
+
+querystring = {"q":"chicken", "app_id": "3c29f155", "app_key": "51273edd95cf3efae15a13d9c5a3efe3"}
+
+headers = {
+    'x-rapidapi-key': "f138806c43msh3b687f6944deec7p1fd922jsna79b7d9f1df4",
+    'x-rapidapi-host': "webknox-recipes.p.rapidapi.com"
+    }
+
+response = requests.request("GET", url, headers=headers, params=querystring)
+
+print(response.text)
